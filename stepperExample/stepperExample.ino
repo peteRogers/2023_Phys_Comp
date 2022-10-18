@@ -4,7 +4,7 @@
 #include <Unistep2.h>
 
 // Define some steppers and the pins they will use
-//Unistep2 stepperX(2, 3, 4, 5, 4096, 1000); // pins for IN1, IN2, IN3, IN4, steps per rev, step delay(in micros)
+//Unistep2 stepperX(7, 8, 9,10, 4096, 1000); // pins for IN1, IN2, IN3, IN4, steps per full rotation, step delay(in micros)
 Unistep2 stepper(7, 8, 9,10, 4096, 800);
 int incer = 4096;
 
