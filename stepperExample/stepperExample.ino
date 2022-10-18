@@ -1,15 +1,4 @@
-/*
- * Unistep2 example: move
- *
- * Simple example of stepper enumeration and movement via move(steps).
- * If steps > 0 clockwise, else counter clockwise. Non-blocking.
- *
- * 30Jan18
- * R Sanchez
- *
- * This code is released to the public domain
- *
- */
+
 
 // include the library
 #include <Unistep2.h>
@@ -19,9 +8,7 @@
 Unistep2 stepper(7, 8, 9,10, 4096, 800);
 int incer = 4096;
 
-void setup()
-{
-  // Your setup code here
+void setup(){
   // The library initializes the pins for you
 }
 
