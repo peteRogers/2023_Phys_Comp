@@ -29,11 +29,6 @@ void loop() {
   /* Get a new sensor event */ 
   sensors_event_t event; 
   accel.getEvent(&event);
-  
- 
-  
- 
   Serial.println(event.acceleration.x);
- 
   delay(5);
 }
