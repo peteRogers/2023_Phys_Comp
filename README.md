@@ -22,5 +22,16 @@ void loop() {
   drv.go();
 }
 ```
-
+### Read Serial data from the computer into arduino
+This code will read one piece of data sent from the computer. 
+```java
+//receiving serial messages
+void serialEvent() {
+  if(Serial.available()){
+      String input = Serial.readStringUntil('\n');
+      //you need a global variable to use data elsewhere in your code
+      myData = input.toInt();
+  }
+}
+```
 
