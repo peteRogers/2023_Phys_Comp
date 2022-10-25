@@ -1,5 +1,43 @@
 # Y2_Phys_Comp
 
+## Code for Jewel neopixel
+
+```java
+#include <Adafruit_NeoPixel.h>
+
+
+#define PIN 6
+
+int red = 0;
+
+
+
+Adafruit_NeoPixel jewel = Adafruit_NeoPixel(7, PIN, NEO_GRBW + NEO_KHZ800);
+
+
+void setup() {
+  Serial.begin(9600);
+  jewel.begin();
+  
+}
+
+void loop() {
+  for(int i = 1; i < 7; i++){
+    jewel.setPixelColor(i, red, 0, 0, 0);
+    jewel.show();
+    delay(100);
+    jewel.clear();
+  }
+}
+
+void serialEvent() {
+  if(Serial.available()){
+      String input = Serial.readStringUntil('\n');
+      red = input.toInt();
+  }
+}
+```
+
 ## Code To use Haptic Controller
 The DRV2605 from TI is a fancy little motor driver. Rather than controlling a stepper motor or DC motor, its designed specifically for controlling haptic motors
 
