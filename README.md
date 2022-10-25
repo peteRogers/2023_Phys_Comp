@@ -22,6 +22,7 @@ void loop() {
   drv.go();
 }
 ```
+![Screenshot](hapticControls.png)
 ### Read Serial data from the computer into arduino
 This code will read one piece of data sent from the computer. 
 ```java
