@@ -18,11 +18,12 @@ void setup() {
 void loop() {
   drv.setWaveform(0, 71);  // start composition
   drv.setWaveform(1,82);
-  drv.setWaveform(3,0); //end wave form
+  drv.setWaveform(2,0); //end wave form
   drv.go();
 }
 ```
 ![Screenshot](hapticControls.png)
+
 ### Read Serial data from the computer into arduino
 This code will read one piece of data sent from the computer. 
 ```java
