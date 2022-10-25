@@ -53,7 +53,33 @@ String getValue(String data, char separator, int index){
     return found > index ? data.substring(strIndex[0], strIndex[1]) : "";
 }
 ```
+##Processing code to control neopixel
+```java
+import processing.serial.*;
+Serial myPort;
+int red = 0;
+int green = 0;
+int blue = 0;
+void setup(){
 
+size(1024, 1024);
+  printArray(Serial.list());
+ 
+  myPort = new Serial(this, Serial.list()[3], 9600);
+   //delay(1000);
+}
+
+void draw(){
+  
+  String s = ""+red+">"+green+">"+blue+">"+"\n";
+  
+  myPort.write(s);
+  
+  red = round(map(mouseX, 0, width, 0, 255));
+  blue = round(map(mouseY, 0, height, 0, 255));
+  
+}
+```
 ## Code To use Haptic Controller
 The DRV2605 from TI is a fancy little motor driver. Rather than controlling a stepper motor or DC motor, its designed specifically for controlling haptic motors
 
