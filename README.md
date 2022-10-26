@@ -16,22 +16,18 @@ Adafruit_NeoPixel jewel = Adafruit_NeoPixel(7, PIN, NEO_GRBW + NEO_KHZ800);
 void setup() {
   Serial.begin(9600);
   jewel.begin();
-  
 }
 
 void loop() {
   for(int i = 1; i < 7; i++){
     jewel.setPixelColor(i, red, green, blue, white);
     jewel.show();
-    delay(100);
-    jewel.clear();
   }
 }
 
 void serialEvent() {
   if(Serial.available()){
       String input = Serial.readStringUntil('\n');
-      
       red = getValue(input, '>', 0).toInt();
       green = getValue(input, '>', 1).toInt();
       blue = getValue(input, '>', 2).toInt();
