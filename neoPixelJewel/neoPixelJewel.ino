@@ -9,6 +9,6 @@ void setup() {
 }
 
 void loop() {
-    jewel.setPixelColor(0, 0, 0, 0, 255);
-    jewel.show();
+  jewel.setPixelColor(0, 0, 0, 0, 255);
+  jewel.show();
 }
