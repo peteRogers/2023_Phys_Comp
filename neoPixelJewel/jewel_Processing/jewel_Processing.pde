@@ -10,7 +10,7 @@ void setup(){
 }
 
 void draw(){
-  color c = color(mouseX/4,1023,mouseY/4);
+  color c = color(mouseX/4,255,255);
   String s = ""+red(c)+">"+green(c)+">"+blue(c)+">"+"\n";
   background(c);
   myPort.write(s);
