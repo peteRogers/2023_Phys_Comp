@@ -14,10 +14,7 @@ void setup() {
 }
 
 void loop() {
-  for(int i = 1; i < 7; i++){
-    jewel.setPixelColor(i, red, green, blue, white);
-    jewel.show();
-  }
+  
 }
 
 void serialEvent() {
@@ -26,7 +23,10 @@ void serialEvent() {
       red = getValue(input, '>', 0).toInt();
       green = getValue(input, '>', 1).toInt();
       blue = getValue(input, '>', 2).toInt();
-      white = getValue(input, '>', 3).toInt();
+      for(int i = 1; i < 7; i++){
+        jewel.setPixelColor(i, red, green, blue, white);
+        jewel.show();
+      }
   }
 }
 
