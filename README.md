@@ -1,4 +1,42 @@
 # Y2_Phys_Comp
+### Control Audio playback speed with proximity sensor
+```java
+import processing.sound.*;
+import processing.serial.*;
+Serial myPort; 
+int sensor = 0;
+
+SoundFile soundfile;
+
+void setup() {
+  size(1024, 1024);
+  printArray(Serial.list());
+  myPort = new Serial(this, Serial.list()[3], 115200);
+  background(255);
+  soundfile = new SoundFile(this, "drumBeat.wav");
+  soundfile.loop();
+}      
+
+void draw() {
+  ellipse(width/2, height/2, sensor, sensor);
+  float speed = map(sensor, 30, 1000, 0, 2);
+  speed = constrain(speed, 0, 2);
+  soundfile.rate(speed);
+}
+
+
+
+void serialEvent (Serial p){
+   String inString = p.readStringUntil('\n');
+   if (inString != null) {
+      inString = trim(inString);
+      sensor = int(inString);
+   }
+}
+
+
+
+```
 
 ### Read Serial data from the computer into arduino
 This code will read one piece of data sent from the computer. 
