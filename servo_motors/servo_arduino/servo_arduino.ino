@@ -19,7 +19,7 @@ void serialEvent() {
       String inString = Serial.readStringUntil('\n');
       
       input = inString.toInt();
-      input = map(input, 0, 99, 920, 2070);
+      input = map(input, 0, 99, 900, 2100);
       
       
   }
