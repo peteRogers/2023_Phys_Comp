@@ -10,16 +10,13 @@ void setup() {
 
 
 void loop() {
-
-
- // delay(1000);
   
-  drv.setWaveform(0, 71);  // play effect 
-  drv.setWaveform(1,82);
-  drv.setWaveform(3,0);
+  drv.setWaveform(0, 72);  // play effect 
+  drv.setWaveform(1,83);
+  drv.setWaveform(2,0);
  // end waveform
   drv.go();
   
- // delay(1000);
+  delay(1000);
   
 }
